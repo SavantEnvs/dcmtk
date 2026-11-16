@@ -1,0 +1,10 @@
+project: savantenvs/dcmtk
+target: dcmtk_image_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/dcmtk_image_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/dcmtk_image_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/dcmtk_image_fuzzer/dcmtk_image_fuzzer.dict
+    timeout: 25
